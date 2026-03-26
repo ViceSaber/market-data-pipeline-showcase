@@ -370,7 +370,7 @@ def refresh_tier(conn, tier: str) -> int:
     Locking note:
     Commit after each fetch batch so we do not hold SQLite's writer lock for
     the full duration of large tier refreshes (especially hot/cold tiers).
-    This reduces contention with confirmer / portfolio / alert jobs.
+    This reduces contention with other higher-frequency jobs.
     """
     markets = _get_markets_for_tier(conn, tier)
 

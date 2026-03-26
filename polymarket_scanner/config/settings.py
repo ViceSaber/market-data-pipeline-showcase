@@ -64,6 +64,6 @@ ALERT_SUPPRESS_MINUTES = 30     # dedup window per slug+type
 ALERT_DAILY_MAX_PER_MARKET = 8  # per-market daily cap
 ALERT_DAILY_MAX_TOTAL = 30      # global daily cap (reduced after filtering)
 
-# ── Telegram (for alerts) ────────────────────────────────────
+# ── Optional notifications ───────────────────────────────────
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")

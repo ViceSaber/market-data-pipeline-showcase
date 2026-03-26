@@ -7,7 +7,7 @@ This public export keeps infrastructure-oriented orchestration only:
 - price refresh tiers
 - snapshot cleanup
 
-Proprietary signal / strategy / alert jobs are intentionally excluded.
+Private decision / notification jobs are intentionally excluded.
 """
 
 import logging

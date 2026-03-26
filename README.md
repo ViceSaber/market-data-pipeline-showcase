@@ -16,7 +16,7 @@ Sanitized public portfolio version of a prediction-market data and infrastructur
 - Secrets, private configs, and local runtime data
 
 ## Purpose
-This repo is meant to showcase system architecture, code organization, and engineering quality without exposing live trading logic.
+This repo is meant to showcase system architecture, code organization, and engineering quality without exposing private decision logic.
 
 ## Stack
 Python, SQLite, APScheduler, Telegram Bot API

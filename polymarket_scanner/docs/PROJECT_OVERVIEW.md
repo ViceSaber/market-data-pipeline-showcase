@@ -1,6 +1,6 @@
 # Polymarket Scanner — Public Overview
 
-This document is the sanitized public overview for the scanner subsystem.
+This document is the sanitized public overview for the data-processing subsystem.
 
 ## Summary
 A prediction-market data pipeline focused on:
@@ -24,11 +24,11 @@ A prediction-market data pipeline focused on:
 
 ## Intentionally excluded
 This public export does **not** include:
-- proprietary signal generation logic
-- arbitrage / directional strategy modules
-- backtest engines and reports
+- private decision logic
+- research-specific modules
+- evaluation engines and result artifacts
 - internal handoff / review notes
-- live alerting heuristics and production thresholds tied to trading logic
+- production notification heuristics and private thresholds
 
 ## Goal
-Show engineering quality, system structure, and operational thinking without exposing private trading edge.
+Show engineering quality, system structure, and operational thinking without exposing private system logic.
