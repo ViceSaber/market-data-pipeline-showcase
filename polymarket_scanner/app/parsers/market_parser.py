@@ -361,8 +361,8 @@ def _extract_entity_from_completed_by(slug: str) -> str:
 def _extract_crypto_asset(slug: str) -> str:
     """Extract crypto asset from slug"""
     slug_lower = slug.lower()
-    if 'megaeth' in slug_lower:
-        return 'MegaETH'
+    if 'projectx' in slug_lower:
+        return 'ProjectX'
     if 'bitcoin' in slug_lower or 'btc' in slug_lower:
         return 'BTC'
     if 'ethereum' in slug_lower or 'eth' in slug_lower:
@@ -643,7 +643,7 @@ def parse_slug(slug: str, question: str = "") -> ParsedMarket:
             date_scope=date_scope,
         )
 
-    # ── Market Cap (MegaETH etc.) ──
+    # ── Market Cap (project-specific examples) ──
     if 'market-cap' in slug_lower and ('one-day' in slug_lower or 'hit' in slug_lower):
         asset = _extract_crypto_asset(slug)
         line_val = parse_number(slug)
