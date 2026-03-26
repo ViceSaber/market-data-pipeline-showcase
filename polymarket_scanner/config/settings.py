@@ -36,10 +36,10 @@ WARM_TAGS = {"crypto", "politics", "sports"}
 HOURS_UNSEEN_TO_STALE = 24
 STALE_RECHECK_BATCH_SIZE = 50
 
-# ── Scanner thresholds ────────────────────────────────────────
+# ── Generic processing thresholds ───────────────────────────
 MIN_QUALITY_SCORE = 0.5
-MIN_EDGE_PCT = 1.0  # Minimum 1% edge to queue as candidate
-CANDIDATE_DEDUP_HOURS = 1  # Hours before same family+type can re-queue
+MIN_EDGE_PCT = 1.0
+CANDIDATE_DEDUP_HOURS = 1
 
 # ── Scheduler ────────────────────────────────────────────────
 TIMEZONE = "Asia/Shanghai"
@@ -63,13 +63,6 @@ ALERT_SPREAD_PCT = 25.0         # bid-ask spread threshold (%)
 ALERT_SUPPRESS_MINUTES = 30     # dedup window per slug+type
 ALERT_DAILY_MAX_PER_MARKET = 8  # per-market daily cap
 ALERT_DAILY_MAX_TOTAL = 30      # global daily cap (reduced after filtering)
-
-# ── Conditional range strategy (research / filtering) ────────
-CONDITIONAL_RANGE_MIN_EDGE = 0.08
-CONDITIONAL_RANGE_MIN_RANGE_PCT = 0.05
-CONDITIONAL_RANGE_MIN_VOLUME_USD = 25_000
-CONDITIONAL_RANGE_MAX_MIDDLE_LOSS = 90.0
-CONDITIONAL_RANGE_MAX_TOTAL_COST = 0.90
 
 # ── Telegram (for alerts) ────────────────────────────────────
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
