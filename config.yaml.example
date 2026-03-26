@@ -1,0 +1,48 @@
+# AI Trading Hunter - Configuration Template
+# Copy this file to config.yaml and fill in your values.
+# DO NOT commit config.yaml to git!
+
+market_types:
+  - energy
+  - geopolitics
+  - crypto
+
+risk:
+  max_position_pct: 5        # Max position size % of capital
+  daily_loss_limit_pct: 7    # Daily loss limit %
+  max_drawdown_pct: 20       # Max drawdown %
+  cooling_hours: 4           # Cooldown after losses (hours)
+  max_consecutive_losses: 3  # Stop after N consecutive losses
+  hard_stop_consecutive: 5   # Hard stop after N consecutive losses
+
+backtest:
+  start_date: "2025-12-01"
+  end_date: "2026-03-19"
+  initial_capital: 1000
+  fee_pct: 2                 # Polymarket fee %
+  spread_pct: 1              # Simulated spread cost %
+
+polymarket:
+  base_url: "https://gamma-api.polymarket.com"
+  clob_url: "https://clob.polymarket.com"
+  min_volume: 50000          # Min liquidity requirement $
+  max_spread_pct: 5          # Max spread %
+
+signals:
+  price_threshold_pct: 5     # Signal trigger within X% of target
+  volume_spike_multiplier: 2 # Volume > avg * X triggers signal
+
+# Market category search keywords
+categories:
+  energy:
+    - "crude oil"
+    - "natural gas"
+    - "oil price"
+  geopolitics:
+    - "ceasefire"
+    - "war"
+    - "sanctions"
+  crypto:
+    - "Bitcoin"
+    - "Ethereum"
+    - "BTC"

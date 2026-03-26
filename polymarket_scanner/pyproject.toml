@@ -1,0 +1,9 @@
+[project]
+name = "polymarket-scanner"
+version = "0.1.0"
+description = "Polymarket arbitrage scanner"
+requires-python = ">=3.10"
+dependencies = [
+    "requests>=2.31.0",
+    "apscheduler>=3.10.0",
+]

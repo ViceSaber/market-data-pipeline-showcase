@@ -1,0 +1,84 @@
+# ── Secrets & Config ──────────────────────────────────
+.env
+*.env
+.env.*
+**/.env
+**/.env.*
+
+# ── Allow .env.example templates ─────────────────────
+!.env.example
+!**/.env.example
+
+# ── Strategy config ──────────────────────────────────
+config.yaml
+**/config.yaml
+
+# ── Handoff docs with secrets ────────────────────────
+HANDOFF.md
+**/HANDOFF.md
+**/AGENT_HANDOFF*.md
+
+# ── Data (too large for git) ─────────────────────────
+*.db
+*.db-wal
+*.db-shm
+data/
+*_state.json
+*.jsonl
+
+# ── Python ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# ── IDE ───────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── OS ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Logs ──────────────────────────────────────────────
+*.log
+logs/
+
+# ── Temp / Archive ────────────────────────────────────
+_archive_arbitrage/
+.pytest_cache/
+*.tmp
+
+# ── Legacy scripts with potential hardcoded secrets ───
+scripts/arb_scan_daemon.py
+
+# ── Strategy code (secret sauce) ────────────────────
+backtest/signals.py
+backtest/run_backtest.py
+backtest/strategy.py
+backtest/grid_search.py
+backtest/grid_runner.py
+backtest/quick_grid.py
+
+# ── Launchd plists with secrets ──────────────────
+*.plist
+backtest/reports/
+
+# ── Strategy design docs & reports ──────────────────────
+docs/strategy_design.md
+backtest/phase2_report.md
+backtest/reports/
+
+# ── Strategy evaluation scripts ─────────────────────────
+polymarket_scanner/scripts/evaluate_conditional_strategy_v1.py
+polymarket_scanner/tests/test_conditional_strategy_v1.py
+
+# ── Trading bot strategy modules ────────────────────────
+trading-assistant-bot/src/strategy/mapper.py
+trading-assistant-bot/src/strategy/sim_trader.py
