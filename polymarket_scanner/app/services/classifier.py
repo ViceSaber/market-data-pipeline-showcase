@@ -91,7 +91,7 @@ def classify_liquidity(volume_24h: float | None, liquidity: float | None) -> str
     vol = volume_24h or 0
     liq = liquidity or 0
 
-    # Use whichever is higher as the signal
+    # Use whichever metric is higher as the classification hint
     effective = max(vol, liq)
 
     if effective >= 100_000:

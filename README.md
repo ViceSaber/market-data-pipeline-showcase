@@ -1,17 +1,17 @@
 # AI Trading Hunter (Public Showcase)
 
-Sanitized public portfolio version of a prediction-market research and monitoring system.
+Sanitized public portfolio version of a prediction-market data and infrastructure project.
 
 ## What is included
-- Polymarket scanner infrastructure
+- Market-data ingestion infrastructure
 - API clients and rate limiting
 - Database/repository layer
 - Scheduler/orchestration scaffolding
 - Selected tests and project structure
 
 ## What is intentionally excluded
-- Proprietary trading strategies and signal logic
-- Backtest engines, reports, and result artifacts
+- Proprietary decision logic
+- Research and evaluation artifacts
 - Internal handoff / review documents
 - Secrets, private configs, and local runtime data
 

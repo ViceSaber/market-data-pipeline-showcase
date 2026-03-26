@@ -1,48 +1,30 @@
-# AI Trading Hunter - Configuration Template
-# Copy this file to config.yaml and fill in your values.
-# DO NOT commit config.yaml to git!
+# Public Showcase Configuration Template
+# Copy to config.yaml for local experimentation.
 
-market_types:
-  - energy
-  - geopolitics
-  - crypto
+project:
+  name: ai-trading-hunter-public
+  timezone: Asia/Shanghai
 
-risk:
-  max_position_pct: 5        # Max position size % of capital
-  daily_loss_limit_pct: 7    # Daily loss limit %
-  max_drawdown_pct: 20       # Max drawdown %
-  cooling_hours: 4           # Cooldown after losses (hours)
-  max_consecutive_losses: 3  # Stop after N consecutive losses
-  hard_stop_consecutive: 5   # Hard stop after N consecutive losses
+database:
+  path: ./polymarket_scanner/data/polymarket.db
+  journal_mode: WAL
+  busy_timeout_ms: 30000
 
-backtest:
-  start_date: "2025-12-01"
-  end_date: "2026-03-19"
-  initial_capital: 1000
-  fee_pct: 2                 # Polymarket fee %
-  spread_pct: 1              # Simulated spread cost %
+api:
+  gamma_base_url: https://gamma-api.polymarket.com
+  max_requests_per_window: 200
+  window_seconds: 10
 
-polymarket:
-  base_url: "https://gamma-api.polymarket.com"
-  clob_url: "https://clob.polymarket.com"
-  min_volume: 50000          # Min liquidity requirement $
-  max_spread_pct: 5          # Max spread %
+refresh:
+  hot_interval_seconds: 300
+  warm_interval_seconds: 900
+  cold_interval_seconds: 3600
+  retention_hours: 72
 
-signals:
-  price_threshold_pct: 5     # Signal trigger within X% of target
-  volume_spike_multiplier: 2 # Volume > avg * X triggers signal
+runtime:
+  batch_size: 20
+  stale_hours: 24
 
-# Market category search keywords
-categories:
-  energy:
-    - "crude oil"
-    - "natural gas"
-    - "oil price"
-  geopolitics:
-    - "ceasefire"
-    - "war"
-    - "sanctions"
-  crypto:
-    - "Bitcoin"
-    - "Ethereum"
-    - "BTC"
+notifications:
+  enabled: false
+  channel: telegram

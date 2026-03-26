@@ -393,7 +393,7 @@ def _extract_threshold_subject(slug: str) -> str:
 
 
 def parse_threshold_market(slug: str, question: str = "") -> Optional[ThresholdMarket]:
-    """Parse threshold-style markets for arb grouping/comparison.
+    """Parse threshold-style markets for structural grouping/comparison.
 
     Returns None for non-threshold markets.
     """
