@@ -1,5 +1,5 @@
 """
-Family Builder — Groups related markets into families for arbitrage detection.
+Family Builder — Groups related markets into families for structural analysis.
 
 Groups markets within an event by: resolution_basis + group_template + underlying_entity + date_scope
 
@@ -84,7 +84,7 @@ def _compute_quality_score(members: list[dict], family_type: str,
     # Base: completeness
     score = completeness
 
-    # Bonus for more members (more arbitrage opportunities)
+    # Bonus for more members (richer structural grouping)
     member_bonus = min(0.3, len(members) * 0.05)
 
     # Penalty for incomplete families (missing expected members)
