@@ -1,7 +1,7 @@
 [project]
-name = "polymarket-scanner"
+name = "market-data-pipeline-showcase"
 version = "0.1.0"
-description = "Polymarket market-data scanner public showcase"
+description = "Market-data pipeline public showcase"
 requires-python = ">=3.10"
 dependencies = [
     "requests>=2.31.0",

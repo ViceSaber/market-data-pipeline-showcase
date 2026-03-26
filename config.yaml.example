@@ -2,7 +2,7 @@
 # Copy to config.yaml for local experimentation.
 
 project:
-  name: ai-trading-hunter-public
+  name: market-data-pipeline-showcase
   timezone: Asia/Shanghai
 
 database:

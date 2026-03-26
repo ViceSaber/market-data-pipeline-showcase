@@ -173,7 +173,7 @@ CREATE TABLE IF NOT EXISTS stale_check_queue (
 CREATE INDEX IF NOT EXISTS idx_stale_check_queue_sched
 ON stale_check_queue(status, next_attempt_at, priority DESC);
 
-CREATE TABLE IF NOT EXISTS scanner_candidate_queue (
+CREATE TABLE IF NOT EXISTS processing_candidate_queue (
   candidate_id           INTEGER PRIMARY KEY AUTOINCREMENT,
   family_key             TEXT NOT NULL,
   candidate_type         TEXT NOT NULL,
@@ -184,10 +184,10 @@ CREATE TABLE IF NOT EXISTS scanner_candidate_queue (
   FOREIGN KEY (family_key) REFERENCES market_family(family_key)
 );
 
-CREATE INDEX IF NOT EXISTS idx_scanner_candidate_queue_sched
-ON scanner_candidate_queue(status, priority DESC, enqueued_at);
+CREATE INDEX IF NOT EXISTS idx_processing_candidate_queue_sched
+ON processing_candidate_queue(status, priority DESC, enqueued_at);
 
-CREATE TABLE IF NOT EXISTS scan_result (
+CREATE TABLE IF NOT EXISTS processing_result (
   result_id              INTEGER PRIMARY KEY AUTOINCREMENT,
   family_key             TEXT NOT NULL,
   result_type            TEXT NOT NULL,
@@ -200,13 +200,13 @@ CREATE TABLE IF NOT EXISTS scan_result (
   FOREIGN KEY (family_key) REFERENCES market_family(family_key)
 );
 
-CREATE INDEX IF NOT EXISTS idx_scan_result_created
-ON scan_result(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_processing_result_created
+ON processing_result(created_at DESC);
 
-CREATE INDEX IF NOT EXISTS idx_scan_result_family
-ON scan_result(family_key, created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_processing_result_family
+ON processing_result(family_key, created_at DESC);
 
-CREATE TABLE IF NOT EXISTS alert_log (
+CREATE TABLE IF NOT EXISTS notification_log (
   alert_id               INTEGER PRIMARY KEY AUTOINCREMENT,
   result_id              INTEGER,
   slug                   TEXT,
@@ -216,14 +216,14 @@ CREATE TABLE IF NOT EXISTS alert_log (
   error_message          TEXT
 );
 
-CREATE INDEX IF NOT EXISTS idx_alert_log_result
-ON alert_log(result_id);
+CREATE INDEX IF NOT EXISTS idx_notification_log_result
+ON notification_log(result_id);
 
-CREATE INDEX IF NOT EXISTS idx_alert_log_sent
-ON alert_log(sent_at DESC);
+CREATE INDEX IF NOT EXISTS idx_notification_log_sent
+ON notification_log(sent_at DESC);
 
-CREATE INDEX IF NOT EXISTS idx_alert_log_slug
-ON alert_log(slug, sent_at DESC);
+CREATE INDEX IF NOT EXISTS idx_notification_log_slug
+ON notification_log(slug, sent_at DESC);
 
 CREATE TABLE IF NOT EXISTS scheduler_state (
   job_name               TEXT PRIMARY KEY,

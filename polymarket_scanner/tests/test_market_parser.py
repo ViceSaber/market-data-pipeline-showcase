@@ -34,7 +34,7 @@ def test_date_parsing():
     assert parse_date_from_slug("kraken-ipo-in-2025") == "2025"
     assert parse_date_from_slug("will-player-l-be-the-top-goal-scorer-in-the-202526-english-premier-league-season") == "2025-26"
     assert parse_date_from_slug("will-solana-reach-100-in-march-2026") == "2026-03"
-    assert parse_date_from_slug("edgex-fdv-above-10b-one-day-after-launch-249") == "one-day-after-launch"
+    assert parse_date_from_slug("projectbeta-fdv-above-10b-one-day-after-launch-249") == "one-day-after-launch"
     print("  ✅ date parsing (8/8)")
 
 
@@ -129,8 +129,8 @@ def test_completed_by():
     assert r.date_scope == "2026-06-30"
     assert "Starmer" in r.underlying_entity
 
-    r = parse_slug("microstrategy-sells-any-bitcoin-by-march-31-2026")
-    assert r.underlying_entity == "MicroStrategy"
+    r = parse_slug("examplecorp-completes-major-asset-sale-by-march-31-2026")
+    assert r.underlying_entity == "Examplecorp"
     assert r.date_scope == "2026-03-31"
 
     r = parse_slug("taylor-swift-pregnant-before-2027")
@@ -140,24 +140,24 @@ def test_completed_by():
     print("  ✅ Completed By (3/3)")
 
 
-# ─── MegaETH Market Cap ──────────────────────────────────────
+# ─── Projectx Market Cap ──────────────────────────────────────
 
 def test_megaeth():
-    r = parse_slug("megaeth-market-cap-fdv-6b-one-day-after-launch-365-559-334-815-776-488-224-766")
-    assert r.underlying_entity == "MegaETH"
+    r = parse_slug("projectx-market-cap-fdv-6b-one-day-after-launch-365-559-334-815-776-488-224-766")
+    assert r.underlying_entity == "Projectx"
     assert r.line_value == 6_000_000_000.0
 
-    r = parse_slug("megaeth-market-cap-fdv-800m-one-day-after-launch-987-114-655")
+    r = parse_slug("projectx-market-cap-fdv-800m-one-day-after-launch-987-114-655")
     assert r.line_value == 800_000_000.0
 
-    r = parse_slug("edgex-fdv-above-10b-one-day-after-launch-249-891-857")
+    r = parse_slug("projectbeta-fdv-above-10b-one-day-after-launch-249-891-857")
     assert r.resolution_basis == "over_under"
-    assert r.underlying_entity == "Edgex"
-    assert r.group_template == "edgex_fdv"
+    assert r.underlying_entity == "Projectbeta"
+    assert r.group_template == "projectbeta_fdv"
     assert r.line_value == 10_000_000_000.0
     assert r.date_scope == "one-day-after-launch"
 
-    print("  ✅ MegaETH/FDV (3/3)")
+    print("  ✅ Projectx/FDV (3/3)")
 
 
 # ─── First To ────────────────────────────────────────────────
@@ -183,10 +183,10 @@ def test_parse_threshold_market_semantics():
     assert r.line_value == 100.0
     assert r.date_scope == "2026-03"
 
-    r = parse_threshold_market("edgex-fdv-above-10b-one-day-after-launch-249")
+    r = parse_threshold_market("projectbeta-fdv-above-10b-one-day-after-launch-249")
     assert r is not None
-    assert r.underlying_entity == "Edgex"
-    assert r.group_template == "edgex_fdv"
+    assert r.underlying_entity == "Projectbeta"
+    assert r.group_template == "projectbeta_fdv"
     assert r.orientation == "above"
     assert r.line_value == 10_000_000_000.0
 

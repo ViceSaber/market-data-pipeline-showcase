@@ -1,9 +1,9 @@
-# Polymarket Scanner — Public Overview
+# Market Data Pipeline — Public Overview
 
 This document is the sanitized public overview for the data-processing subsystem.
 
 ## Summary
-A prediction-market data pipeline focused on:
+A market-data processing pipeline focused on:
 - event / market ingestion
 - structured market parsing
 - family/group construction

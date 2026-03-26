@@ -635,15 +635,6 @@ def parse_slug(slug: str, question: str = "") -> ParsedMarket:
     if _is_completed_by(slug, question):
         entity = _extract_entity_from_completed_by(slug)
 
-        if 'microstrategy' in slug_lower:
-            return ParsedMarket(
-                resolution_basis='completed_by',
-                group_template='microstrategy_sells_btc',
-                underlying_entity='MicroStrategy',
-                side_label='yes',
-                date_scope=date_scope,
-            )
-
         return ParsedMarket(
             resolution_basis='completed_by',
             group_template=f'{entity.lower().replace(" ", "_")}_by_date',

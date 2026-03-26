@@ -55,15 +55,6 @@ BATCH_SIZE = 20  # max slugs per fetch_by_slug_batch call (Gamma API URL length 
 TIER_PROMOTION_THRESHOLD = 3  # consecutive passes to promote tier
 TIER_DEMOTION_THRESHOLD = 3   # consecutive passes to demote tier
 
-# ── Alert thresholds ─────────────────────────────────────────
-ALERT_SPIKE_PCT = 15.0          # 5-min price change threshold
-ALERT_TREND_PCT = 25.0          # 1-hour cumulative change threshold
-ALERT_VOLUME_SURGE_MULT = 3.0   # 24h volume surge multiplier
-ALERT_SPREAD_PCT = 25.0         # bid-ask spread threshold (%)
-ALERT_SUPPRESS_MINUTES = 30     # dedup window per slug+type
-ALERT_DAILY_MAX_PER_MARKET = 8  # per-market daily cap
-ALERT_DAILY_MAX_TOTAL = 30      # global daily cap (reduced after filtering)
-
 # ── Optional notifications ───────────────────────────────────
-TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
-TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
+NOTIFICATION_TOKEN = os.environ.get("NOTIFICATION_TOKEN", "")
+NOTIFICATION_TARGET = os.environ.get("NOTIFICATION_TARGET", "")

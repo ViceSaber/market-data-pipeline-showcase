@@ -2,7 +2,7 @@
 
 ## 概述
 
-`market_parser` 负责从 slug/question 中提取结构化字段，用于后续的 family 分组和套利检测。
+`market_parser` 负责从 slug/question 中提取结构化字段，用于后续的 family 分组和结构化比较。
 
 ## 输出字段
 
@@ -57,7 +57,7 @@ date_scope: "{date}"
 
 **特征：** slug 是简单的 yes/no 问题
 
-- `microstrategy-sells-any-bitcoin-by-march-31-2026`
+- `examplecorp-completes-major-asset-sale-by-march-31-2026`
 - `kraken-ipo-in-2025`
 - `trump-out-as-president-before-gta-vi`
 
